@@ -4,13 +4,26 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { LayoutModule } from 'angular-admin-lte';    //Loading layout module
+import { BoxModule } from 'angular-admin-lte';       //Box component
+
+import { adminLteConf } from './admin-lte.conf';   //Import the layout configuration.
+import { CoreModule } from './core/core.module';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    BoxModule,
+    CoreModule,
+    LayoutModule.forRoot(adminLteConf),   //Provide the configuration to the layout module.
   ],
   providers: [],
   bootstrap: [AppComponent]
