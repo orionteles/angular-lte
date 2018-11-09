@@ -20,7 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     BoxModule,
     CoreModule,
     LayoutModule.forRoot(adminLteConf),   //Provide the configuration to the layout module.
