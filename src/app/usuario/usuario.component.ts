@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import { UtilService } from '../util.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UtilService } from '../util.service';
 export class UsuarioComponent implements OnInit {
 
   form = this.fb.group({
-    nome: [''],
+    nome: ['', Validators.required],
     telefone: [''],
     email: [''],
     endereco: this.fb.group({
@@ -41,14 +41,12 @@ export class UsuarioComponent implements OnInit {
   pesquisarCep(){
     let cep = this.form.get('endereco').value.cep;
 
-    
     this.util.getEnderecoByCep(cep).subscribe(
-      (data: any)=>{
-        this.form.patchValue({endereco: data});
-        this.form.patchValue({endereco: {}});
-      },
-      error=>console.log(error)
-      )
+    (data: any)=>{
+      this.form.patchValue({endereco: data});
+    },
+    error=>console.log(error)
+    )
       
   }
 
