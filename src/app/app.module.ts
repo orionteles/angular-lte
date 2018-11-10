@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { FormModule } from './forms/forms.module';
     BoxModule,
     CoreModule,
     FormModule,
+    HttpClientModule,
     LayoutModule.forRoot(adminLteConf),   //Provide the configuration to the layout module.
   ],
   providers: [],
