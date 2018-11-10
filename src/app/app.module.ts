@@ -10,18 +10,22 @@ import { BoxModule } from 'angular-admin-lte';       //Box component
 import { adminLteConf } from './admin-lte.conf';   //Import the layout configuration.
 import { CoreModule } from './core/core.module';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     BoxModule,
     CoreModule,
+    FormModule,
     LayoutModule.forRoot(adminLteConf),   //Provide the configuration to the layout module.
   ],
   providers: [],
