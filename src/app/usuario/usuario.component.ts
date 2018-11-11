@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { UtilService } from '../util.service';
+import {UsuarioService} from '../usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -28,7 +29,8 @@ export class UsuarioComponent implements OnInit {
   
   constructor(
     private fb: FormBuilder,
-    private util: UtilService
+    private util: UtilService,
+    private usuario: UsuarioService,
   ) { }
   
   ngOnInit() {  
@@ -36,6 +38,10 @@ export class UsuarioComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.form.value);
+
+    this.usuario.save(this.form.value);
+
+
   }
   
   pesquisarCep(){

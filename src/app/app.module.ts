@@ -13,11 +13,13 @@ import { CoreModule } from './core/core.module';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormModule } from './forms/forms.module';
+import { UsuarioListagemComponent } from './usuario-listagem/usuario-listagem.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuarioComponent,
+    UsuarioListagemComponent,
   ],
   imports: [
     BrowserModule,
